@@ -89,9 +89,9 @@ public class Main extends LinearOpMode {
             }
 
             if(gamepad2.dpad_up){
-                hangOver.setPower(-0.8);
+                hangOver.setPower(-0.95);
             } else if(gamepad2.dpad_down){
-                hangOver.setPower(0.8);
+                hangOver.setPower(0.95);
             } else if(hangOver.getCurrentPosition() == -10){
                 hangOver.setPower(0.0);
             } else if(hangOver.getCurrentPosition() == -1356){
@@ -106,11 +106,19 @@ public class Main extends LinearOpMode {
             if(gamepad2.left_bumper) {
                 northTower.setPower(-1);
                 southTower.setPower(1); //swap north and south values if needed
+            } else if(gamepad2.right_bumper) {
+                northTower.setPower(-1);
+                southTower.setPower(1);
+            } else if (gamepad2.dpad_left) {
+                northTower.setPower(-1);
+                southTower.setPower(1);
+            } else if (gamepad2.dpad_right) {
+                northTower.setPower(-1);
+                southTower.setPower(1);
             } else {
-                northTower.setPower(0);
-                southTower.setPower(0);
+                northTower.setPower(0.0);
+                southTower.setPower(0.0);
             }
-
         }
         rightFront.setPower(0);
         rightRear.setPower(0);
@@ -122,3 +130,18 @@ public class Main extends LinearOpMode {
 
     }
 }
+//if(gamepad2.left_bumper) {
+//        northTower.setPower(-0.96);
+//        southTower.setPower(0.96); //swap north and south values if needed
+//        } else if(gamepad2.right_bumper) {
+//       northTower.setPower(-0.96);
+//        southTower.setPower(0.96);
+//        } else if (gamepad2.dpad_left) {
+//        northTower.setPower(-0.96);
+//        southTower.setPower(0.96);
+//        } else if (gamepad2.dpad_right) {
+//        northTower.setPower(-0.96);
+//       southTower.setPower(0.96);
+//        } else {
+//        northTower.setPower(0.0);
+//        southTower.setPower(0.0);
